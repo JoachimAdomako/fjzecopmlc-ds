@@ -1,6 +1,6 @@
 """Stack implementation using a list."""
 
-from typing import Any, Optional
+from typing import Any
 
 
 class Stack:

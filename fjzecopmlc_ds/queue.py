@@ -1,14 +1,15 @@
-"""Queue implementation using a list."""
+"""Queue implementation using collections.deque for efficient operations."""
 
-from typing import Any, Optional
+from collections import deque
+from typing import Any
 
 
 class Queue:
-    """A simple queue (FIFO) data structure implementation."""
+    """A simple queue (FIFO) data structure implementation using deque."""
 
     def __init__(self):
         """Initialize an empty queue."""
-        self._items: list[Any] = []
+        self._items: deque = deque()
 
     def enqueue(self, item: Any) -> None:
         """
@@ -31,7 +32,7 @@ class Queue:
         """
         if self.is_empty():
             raise IndexError("dequeue from empty queue")
-        return self._items.pop(0)
+        return self._items.popleft()
 
     def front(self) -> Any:
         """
